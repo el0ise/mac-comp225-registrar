@@ -1,3 +1,40 @@
+# Part 2: Adding new Features
+
+This builds on Part 1.
+
+It's almost time for registration. You've gotten the code more readable and easier to modify by refactoring. That's good because the registrar has come to you with new features to add:
+
+* The registrar has decided that courses should not impose an enrollment limit by default.
+* If an enrollment limit is already set, you should be able to remove it to allow unlimited enrollment.
+* An existing enrollment limit should be modifiable at eny time, regardless of whether students have already started registering. (This actually make a lot of sense. Most of the time enrollment limits are changed when the class is already full and you want to add extra students.)
+
+## Adding the features
+
+Your task is to modify your Course class to implement the new features described above. 
+
+In consultation with your technical lead, you decide that the public api to remove an enrollment limit and allow unlimited enrollment should be as follows:
+
+```
+public void removeEnrollmentLimit()
+```
+
+Add this method to your courses class and modify the implemention of other methods to implement the other new features (unlimited default enrollments, modifiable limits at any time).
+
+## Adding new tests
+
+Modifying 'RegistrarTest' to add new tests for the features you will add. Practice good defensive programming. You should think of all the possible ways that the program could get into an incorrect state based on your new features and test for these cases.
+
+## Submitting your changes and tests
+
+When you have implemented the new features and tests, make sure to commit and push to your fork on github. This will update your original pull request from part 1 to submit the full assignment.
+
+**The assignment is due by 10am on Monday Feb. 29th**
+
+
+The previous assignment appears below for reference.
+
+-------------
+
 # Part 1: A Refactoring Exercise
 
 Oh no! The registrar recently contracted Programmer Bob's _CodingDoneCheapAndDirty, inc._ to build a new registration system for classes at Macalester. Unfortunately, Bob did a terrible job and the code is a mess! Registration time is in two weeks, and it's up to you to fix the system.
