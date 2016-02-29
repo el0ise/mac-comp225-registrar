@@ -71,6 +71,7 @@ public class RegistrarTest {
         assertEquals(16, comp225.getEnrollmentLimit());
     }
 
+
     @Test
     public void enrollingUpToLimitAllowed() {
         factory.enrollMultipleStudents(comp225, 15);
@@ -118,10 +119,10 @@ public class RegistrarTest {
     }
 
     @Test
-    public void cannotChangeEnrollmentLimitOnceStudentsRegister(){
+    public void canChangeEnrollmentLimitOnceStudentsRegister(){
         assertTrue(basketWeaving101.setEnrollmentLimit(10));
         fred.enrollIn(basketWeaving101);
-        assertFalse(basketWeaving101.setEnrollmentLimit(8));
+        assertTrue(basketWeaving101.setEnrollmentLimit(8));
     }
 
 
@@ -174,6 +175,16 @@ public class RegistrarTest {
         sally.drop(comp225);
         assertTrue(comp225.getStudents().contains(zongo));
         assertEquals(list(fred), comp225.getWaitList());
+    }
+
+    @Test
+    public void changeCourseLimit(){
+        comp225.removeEnrollmentLimit(comp225);
+    }
+
+    @Test
+    public void enrollATon(){
+        factory.enrollMultipleStudents(comp225, 50);
     }
 
     // ------ Post-test invariant check ------
