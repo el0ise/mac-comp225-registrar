@@ -38,9 +38,11 @@ public class Course {
         if (roster.size() <= limit && limit > 0){
             if(limit > this.getEnrollmentLimit()) {
                 while(getWaitList().size() != 0){
-                    Student s = waitlist.remove(0);
-                    roster.add(s);
-                    s.enrollIn(this);
+                    for(int j=limit-this.getEnrollmentLimit(); j>= 0; j++){
+                        Student s = waitlist.remove(0);
+                        roster.add(s);
+                        s.enrollIn(this);
+                    }
                 }
             }
             this.limit = limit;
