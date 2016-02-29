@@ -29,7 +29,7 @@ public class Student {
     }
 
     public boolean enrollIn(Course course) {
-        if (course.enroll(this)) {
+        if (course.enrollStudent(this)) {
             courses.add(course);
             return true;
         }
